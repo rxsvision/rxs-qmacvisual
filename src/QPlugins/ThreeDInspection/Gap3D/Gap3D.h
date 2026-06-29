@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "gap3d_global.h"
 #include "dependence/maininterface.h"

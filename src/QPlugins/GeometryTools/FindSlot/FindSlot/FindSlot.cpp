@@ -1,4 +1,4 @@
-#include "FindSlot.h"
+ï»¿#include "FindSlot.h"
 
 FindSlot::FindSlot()
 {
@@ -8,12 +8,12 @@ FindSlot::FindSlot()
 
 QString FindSlot::name()
 {
-    return "Ñ°ÕÒSLOT";
+    return "å¯»æ‰¾SLOT";
 }
 
 QString FindSlot::information()
 {
-    return "¼¸ºÎ¹¤¾ß";
+    return "å‡ ä½•å·¥å…·";
 }
 
 QDialog* showDialog(QString toolName, QToolBase* toolBase)

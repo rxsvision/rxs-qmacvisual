@@ -1,4 +1,4 @@
-#include "Flatness3D.h"
+ï»¿#include "Flatness3D.h"
 
 Flatness3D::Flatness3D()
 {
@@ -7,12 +7,12 @@ Flatness3D::Flatness3D()
 }
 QString Flatness3D::name()
 {
-    return "Æ½Ãæ¶È¼ÆËã";
+    return "å¹³é¢åº¦è®¡ç®—";
 }
 
 QString Flatness3D::information()
 {
-    return "ÈıÎ¬¼ì²â";
+    return "ä¸‰ç»´æ£€æµ‹";
 }
 
 QDialog* showDialog(QString toolName, QToolBase* toolBase)

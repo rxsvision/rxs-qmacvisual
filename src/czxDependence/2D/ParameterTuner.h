@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "ImageViewer.h"
 #include"blobAnalyze.h"
 #include"../czxTool_std.h"

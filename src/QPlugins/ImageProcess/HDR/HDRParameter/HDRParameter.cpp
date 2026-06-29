@@ -1,4 +1,4 @@
-#include "HDRParameter.h"
+ï»¿#include "HDRParameter.h"
 
 FocusFusionParameter::FocusFusionParameter(QString toolName, QToolBase* toolBase, QWidget* parent)
 	: Toolnterface(toolName, toolBase, parent)
@@ -34,9 +34,9 @@ int FocusFusionParameter::SubExecuteLink(const int int_link, const QString str_l
 		{
 			strs.clear();
 			strs = str_link.split(".");
-			if (strs.size() == 1 || strs[1] != "Í¼Ïñ")
+			if (strs.size() == 1 || strs[1] != "å›¾åƒ")
 			{
-				QMessageBox msgBox(QMessageBox::Icon::NoIcon, "´íÎó", "ÊäÈëµÄÁ´½Ó´íÎó£¡");
+				QMessageBox msgBox(QMessageBox::Icon::NoIcon, "é”™è¯¯", "è¾“å…¥çš„é“¾æ¥é”™è¯¯ï¼");
 				msgBox.setWindowIcon(QIcon(":/resource/error.png"));
 				msgBox.exec();
 				return -1;

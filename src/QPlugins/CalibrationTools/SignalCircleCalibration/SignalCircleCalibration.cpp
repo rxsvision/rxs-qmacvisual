@@ -1,4 +1,4 @@
-#include "SingleCircleCalibration.h"
+ï»¿#include "SingleCircleCalibration.h"
 
 SingleCircleCalibration::SingleCircleCalibration()
 {
@@ -8,12 +8,12 @@ SingleCircleCalibration::SingleCircleCalibration()
 
 QString SingleCircleCalibration::name()
 {
-    return "µ¥Ô²±ê¶¨";
+    return "å•åœ†æ ‡å®š";
 }
 
 QString SingleCircleCalibration::information()
 {
-    return "±ê¶¨¹¤¾ß";
+    return "æ ‡å®šå·¥å…·";
 }
 
 QDialog* showDialog(QString toolName, QToolBase* toolBase)

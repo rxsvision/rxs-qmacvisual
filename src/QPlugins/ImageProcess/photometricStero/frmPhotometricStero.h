@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <QWidget>
 #include "ui_frmPhotometricStero.h"
@@ -81,7 +81,7 @@ private:
 };
 
 
-//È«¾Ö±äÁ¿¿ØÖÆ
+//å…¨å±€å˜é‡æ§åˆ¶
 class QConfig
 {
 public:

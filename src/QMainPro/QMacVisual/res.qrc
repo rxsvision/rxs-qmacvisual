@@ -1,4 +1,4 @@
-<RCC>
+﻿<RCC>
     <qresource prefix="/">
         <file>res/ico/cam.png</file>
         <file>res/ico/network.png</file>

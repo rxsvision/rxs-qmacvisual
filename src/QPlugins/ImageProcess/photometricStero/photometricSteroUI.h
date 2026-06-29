@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "photometricstero_global.h"
 #include "dependence/maininterface.h"

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <QDialog>
 #include<opencv2/opencv.hpp>
@@ -69,14 +69,14 @@ private:
 	cv::Mat srcImage;
 	cv::Mat dstImage;
 
-	vector<QPointF> xy = vector<QPointF>(1000);//ÕÒµ½µÄ±ß½çµã
+	vector<QPointF> xy = vector<QPointF>(1000);//æ‰¾åˆ°çš„è¾¹ç•Œç‚¹
 	vector<cv::Point2f> select_xy = vector<cv::Point2f>(1000);
 	vector<cv::Point2f> cull_xy = vector<cv::Point2f>(1000);
 
 	cv::Vec3f fit_circle;
 };
 
-//È«¾Ö±äÁ¿¿ØÖÆ
+//å…¨å±€å˜é‡æ§åˆ¶
 class QConfig
 {
 public:

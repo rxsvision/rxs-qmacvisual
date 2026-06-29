@@ -1,4 +1,4 @@
-#include"utils.h"
+﻿#include"utils.h"
 
 QImage Mat2QImage(const cv::Mat& mat)
 {

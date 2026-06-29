@@ -1,4 +1,4 @@
-/* See LICENSE file in the root OpenCV directory */
+﻿/* See LICENSE file in the root OpenCV directory */
 
 #ifndef OPENCV_CORE_OCL_RUNTIME_OPENCL_SVM_DEFINITIONS_HPP
 #define OPENCV_CORE_OCL_RUNTIME_OPENCL_SVM_DEFINITIONS_HPP

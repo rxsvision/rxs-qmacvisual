@@ -1,4 +1,4 @@
-#include "ImageParameter.h"
+ï»¿#include "ImageParameter.h"
 #include <QMenu>
 #include <QAction>
 #include <QMessageBox>
@@ -14,7 +14,7 @@ ImageParameter::ImageParameter(QString toolName, QToolBase* toolBase, QWidget* p
 
 	QRegExpValidator* pRegVld = new QRegExpValidator(this);
 
-	QRegExp regex("^[-]?\\d+(\\.\\d+)?$");  // ÕýÔò±í´ïÊ½£ºÆ¥ÅäÕûÊý»ò¸¡µãÊý
+	QRegExp regex("^[-]?\\d+(\\.\\d+)?$");  // æ­£åˆ™è¡¨è¾¾å¼ï¼šåŒ¹é…æ•´æ•°æˆ–æµ®ç‚¹æ•°
 	pRegVld->setRegExp(regex);
 	ui.slant->setValidator(pRegVld);
 	ui.tilt->setValidator(pRegVld);
@@ -30,15 +30,15 @@ void ImageParameter::contextMenuEvent(QContextMenuEvent* event)
 {
     //QMenu menu(this);
 
-    //// ÔÚ²Ëµ¥ÖÐÌí¼ÓÑ¡Ïî
+    //// åœ¨èœå•ä¸­æ·»åŠ é€‰é¡¹
     //QAction* action1 = menu.addAction("Close Tab");
     //QAction* action2 = menu.addAction("Show Message");
 
-    //// ´¦Àí²Ëµ¥ÏîµÄµã»÷ÊÂ¼þ
+    //// å¤„ç†èœå•é¡¹çš„ç‚¹å‡»äº‹ä»¶
     //connect(action1, &QAction::triggered, this, &MyWidget::onCloseTab);
     //connect(action2, &QAction::triggered, this, &MyWidget::onShowMessage);
 
-    // ÏÔÊ¾ÓÒ¼ü²Ëµ¥
+    // æ˜¾ç¤ºå³é”®èœå•
     //menu.exec(event->globalPos());
 }
 
@@ -51,9 +51,9 @@ int ImageParameter::SubExecuteLink(const int int_link, const QString str_link, c
 		{
 			strs.clear();
 			strs = str_link.split(".");
-			if (strs.size() == 1 || strs[1] != "Í¼Ïñ")
+			if (strs.size() == 1 || strs[1] != "å›¾åƒ")
 			{
-				QMessageBox msgBox(QMessageBox::Icon::NoIcon, "´íÎó", "ÊäÈëµÄÁ´½Ó´íÎó£¡");
+				QMessageBox msgBox(QMessageBox::Icon::NoIcon, "é”™è¯¯", "è¾“å…¥çš„é“¾æŽ¥é”™è¯¯ï¼");
 				msgBox.setWindowIcon(QIcon(":/resource/error.png"));
 				msgBox.exec();
 				return -1;
@@ -64,7 +64,7 @@ int ImageParameter::SubExecuteLink(const int int_link, const QString str_link, c
 			{
 				if (GetToolBase()->m_Tools[i].PublicToolName == strs[0])
 				{
-					//»ñÈ¡µÄÍ¼ÏñÔÚ¹¤¾ßÊý×éÖÐµÄË÷Òý
+					//èŽ·å–çš„å›¾åƒåœ¨å·¥å…·æ•°ç»„ä¸­çš„ç´¢å¼•
 					image_index = i;
 					auto srcImage = GetToolBase()->m_Tools[image_index].PublicImage.OutputImage;
 					dstImage = cv::Mat();

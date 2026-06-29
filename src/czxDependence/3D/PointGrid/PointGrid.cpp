@@ -1,4 +1,4 @@
-#include "PointGrid.h"
+ï»¿#include "PointGrid.h"
 #include<pcl/common/common.h>
 #include <cmath>
 
@@ -16,7 +16,7 @@ void PointGrid::initParameter(CP& cloud, float interval_x_, float interval_y_)
 
 void PointGrid::initImage(const CP& cloud)
 {
-	// ³õÊ¼»¯¶şÎ¬Êı×é
+	// åˆå§‹åŒ–äºŒç»´æ•°ç»„
 	depth_img = new float* [height];
 	depth_map = new bool* [height];
 	for (int i = 0; i < height; ++i)
@@ -54,13 +54,13 @@ PointGrid::PointGrid(CP cloud, PointGrid& other)
 	PointT min_p, max_p;
 	pcl::getMinMax3D(*cloud, min_p, max_p);
 	if(min_p.x>other.min_point.x || min_p.y>other.min_point.y)
-		throw std::runtime_error("×îµÍµã²»Ò»ÖÂ£¬µãÔÆ³ß´çÎŞ·¨Í³Ò»");
+		throw std::runtime_error("æœ€ä½ç‚¹ä¸ä¸€è‡´ï¼Œç‚¹äº‘å°ºå¯¸æ— æ³•ç»Ÿä¸€");
 	min_point = other.min_point;
 	int width_c = static_cast<int>(ceil((max_p.x - min_point.x) / interval_x));
 	int height_c = static_cast<int>(ceil((max_p.y - min_point.y) / interval_y));
 
 	if(width_c>other.width || height_c>other.height)
-		throw std::runtime_error("Í¼Ïñ³ß´çÎŞ·¨Í³Ò»");
+		throw std::runtime_error("å›¾åƒå°ºå¯¸æ— æ³•ç»Ÿä¸€");
 	width = width_c;
 	height = height_c;
 

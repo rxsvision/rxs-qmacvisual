@@ -1,4 +1,4 @@
-#include "photometricSteroUI.h"
+ï»¿#include "photometricSteroUI.h"
 
 photometricStero::photometricStero()
 {
@@ -8,12 +8,12 @@ photometricStero::photometricStero()
 
 QString photometricStero::name()
 {
-    return "¹â¶ÈÁ¢Ìå·¨";
+    return "å…‰åº¦ç«‹ä½“æ³•";
 }
 
 QString photometricStero::information()
 {
-    return "Í¼Ïñ´¦Àí";
+    return "å›¾åƒå¤„ç†";
 }
 
 QDialog* showDialog(QString toolName, QToolBase* toolBase)

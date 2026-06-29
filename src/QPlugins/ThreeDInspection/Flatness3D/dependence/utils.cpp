@@ -1,4 +1,4 @@
-#include"utils.h"
+ï»¿#include"utils.h"
 
 QImage Mat2QImage(const cv::Mat& mat)
 {
@@ -37,31 +37,31 @@ QImage Mat2QImage(const cv::Mat& mat)
 	}
 	else if (mat.type() == CV_32FC1)
 	{
-		// ¹éÒ»»¯µ½ [0, 255]
+		// å½’ä¸€åŒ–åˆ° [0, 255]
 		cv::Mat normalizedMat;
 		cv::normalize(mat, normalizedMat, 0, 255, cv::NORM_MINMAX);
 
-		// ×ª»»Îª CV_8UC1
+		// è½¬æ¢ä¸º CV_8UC1
 		cv::Mat ucharMat;
 		normalizedMat.convertTo(ucharMat, CV_8UC1);
 
-		// ´´½¨ QImage
+		// åˆ›å»º QImage
 		return QImage(ucharMat.data, ucharMat.cols, ucharMat.rows, ucharMat.step, QImage::Format_Grayscale8).copy();
 	}
 	else if (mat.type() == CV_16UC1) {
-		// ¹æ·¶»¯Îª 8 Î»Í¼Ïñ
+		// è§„èŒƒåŒ–ä¸º 8 ä½å›¾åƒ
 		cv::Mat normalized;
 		double minVal, maxVal;
-		cv::minMaxLoc(mat, &minVal, &maxVal); // »ñÈ¡×îĞ¡ºÍ×î´óÖµ
-		mat.convertTo(normalized, CV_8U, 255.0 / maxVal); // Ó³Éäµ½ 0-255
+		cv::minMaxLoc(mat, &minVal, &maxVal); // è·å–æœ€å°å’Œæœ€å¤§å€¼
+		mat.convertTo(normalized, CV_8U, 255.0 / maxVal); // æ˜ å°„åˆ° 0-255
 
-		// ×ª»»Îª QImage
+		// è½¬æ¢ä¸º QImage
 		return QImage(normalized.data, normalized.cols, normalized.rows, normalized.step, QImage::Format_Grayscale8).copy();
 	}
 	else
 	{
 		//cout<< mat.type();
-		QMessageBox::information(nullptr, "type", QString::number(mat.type())); // Ò»ĞĞ´úÂëÏÔÊ¾ÏûÏ¢¿ò
+		QMessageBox::information(nullptr, "type", QString::number(mat.type())); // ä¸€è¡Œä»£ç æ˜¾ç¤ºæ¶ˆæ¯æ¡†
 		return QImage();
 	}
 }
@@ -71,8 +71,8 @@ CP img2pcl(const cv::Mat& img, float x_scale, float y_scale, float z_scale, floa
 	CP ret(new CloudT);
 	//cv::Mat new_img;
 	//img.convertTo(new_img, CV_32FC1);
-	//QMessageBox::information(nullptr, "type", QString::number(img.type())); // Ò»ĞĞ´úÂëÏÔÊ¾ÏûÏ¢¿ò
-	//QMessageBox::information(nullptr, "type", QString::number(new_img.type())); // Ò»ĞĞ´úÂëÏÔÊ¾ÏûÏ¢¿ò
+	//QMessageBox::information(nullptr, "type", QString::number(img.type())); // ä¸€è¡Œä»£ç æ˜¾ç¤ºæ¶ˆæ¯æ¡†
+	//QMessageBox::information(nullptr, "type", QString::number(new_img.type())); // ä¸€è¡Œä»£ç æ˜¾ç¤ºæ¶ˆæ¯æ¡†
 
 	for (int r = 0; r < img.rows; r++)
 	{

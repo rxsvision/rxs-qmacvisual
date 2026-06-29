@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <QWidget>
 #include "ui_ImageParameter.h"
@@ -61,7 +61,7 @@ private:
 	cv::Mat dstImage;
 };
 
-////È«¾Ö±äÁ¿¿ØÖÆ
+////å…¨å±€å˜é‡æ§åˆ¶
 //class QConfig
 //{
 //public:

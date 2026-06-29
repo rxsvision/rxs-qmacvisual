@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <QDialog>
 #include "ui_frmFocusFusion.h"
@@ -81,7 +81,7 @@ private:
 	RectangleItem* rectangle_item;
 };
 
-//È«¾Ö±äÁ¿¿ØÖÆ
+//å…¨å±€å˜é‡æ§åˆ¶
 class QConfig
 {
 public:

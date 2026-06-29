@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <windows.h> 
@@ -19,16 +19,16 @@ public:
     cv::Rect getRoi() {
         return select_roi;}
 
-    cv::Point pt1, pt2;//×óÉÏ½ÇÓÒÏÂ½ÇµÄÁ½¸öµã
+    cv::Point pt1, pt2;//å·¦ä¸Šè§’å³ä¸‹è§’çš„ä¸¤ä¸ªç‚¹
 protected:
     int scale;
-    bool drawing;//ÊÇ·ñÕıÔÚ¿òÑ¡
-    cv::Rect select_roi;//¿òÑ¡µÄroi
+    bool drawing;//æ˜¯å¦æ­£åœ¨æ¡†é€‰
+    cv::Rect select_roi;//æ¡†é€‰çš„roi
 
     static void onMouseStatic(int event, int x, int y, int flags, void* userdata);
     void MouseWheel(int event, int x, int y, int flags);
     void handleZoom(int delta);
-    //Á½µãÒÆ¶¯ÔÚ¿òÑ¡ÖĞ
+    //ä¸¤ç‚¹ç§»åŠ¨åœ¨æ¡†é€‰ä¸­
     virtual void selectRectangle(int event, int x, int y, int, void*);
     int getMouseWheelDelta(int flags);
 
@@ -43,7 +43,7 @@ protected:
     cv::Mat drawPoints(cv::Mat img, vector<cv::Point2f> points);
 
     /// <summary>
-    /// ÖØÔØº¯Êı£¬Ö¸¶¨¿òÑ¡Íê³ÉºóµÄ²Ù×÷
+    /// é‡è½½å‡½æ•°ï¼ŒæŒ‡å®šæ¡†é€‰å®Œæˆåçš„æ“ä½œ
     /// </summary>
     virtual void selectRectangleDown();
     virtual void onEnter() {};

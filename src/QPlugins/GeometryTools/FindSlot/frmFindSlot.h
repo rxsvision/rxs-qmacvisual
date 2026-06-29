@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <QDialog>
 #include "ui_frmFindSlot.h"
@@ -35,7 +35,7 @@ private:
 	SlotItem* slot_item;
 };
 
-//È«¾Ö±äÁ¿¿ØÖÆ
+//å…¨å±€å˜é‡æ§åˆ¶
 class QConfig
 {
 public:

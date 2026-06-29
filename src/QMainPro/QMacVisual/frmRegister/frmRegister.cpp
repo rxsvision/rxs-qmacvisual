@@ -1,4 +1,4 @@
-#include "frmRegister.h"
+ï»¿#include "frmRegister.h"
 #include <QDesktopWidget>
 #include <QStyle>
 #include "datavar.h"
@@ -8,7 +8,7 @@ frmRegister::frmRegister(QWidget *parent)
 {		
 	ui.setupUi(this);
 	this->setWindowIcon(QIcon(":/Bitmaps/app.ico"));
-	//ÈôÎÄ¼ş¼Ğ²»´æÔÚ£¬Ôò´´½¨
+	//è‹¥æ–‡ä»¶å¤¹ä¸å­˜åœ¨ï¼Œåˆ™åˆ›å»º
 	QDir dir;
 	if (!dir.exists(dataVar::path_P))
 	{
@@ -39,7 +39,7 @@ frmRegister::frmRegister(QWidget *parent)
 	str_key = key1.mid(0, 4) + "s" + key2.mid(3, key2.length() - 2) + "7" + key1.mid(key1.length() - 4, key1.length() - 1) + "6";
 	ui.txtSerialNumber->setText(str_key);	
 	QSettings settings("HKEY_CURRENT_USER\\Software\\MyApp", QSettings::NativeFormat);
-	//¶ÁÈ¡×¢²á±í
+	//è¯»å–æ³¨å†Œè¡¨
 	value = settings.value("sn_code", "error").toString();
 	if (form_state != 1)
 	{	
@@ -64,7 +64,7 @@ void frmRegister::form_statues()
 	{		
 		this->close();
 		frmRegister *fRegister = new frmRegister();
-		//´°ÌåÒÆÖÁÆÁÄ»ÖĞ¼ä
+		//çª—ä½“ç§»è‡³å±å¹•ä¸­é—´
 		fRegister->move(QApplication::desktop()->screen()->rect().center() - fRegister->rect().center());
 		fRegister->show();			
 	}
@@ -78,9 +78,9 @@ void frmRegister::on_btnCmdCheckID_clicked()
 	if (true)
 	{
 		QSettings settings("HKEY_CURRENT_USER\\Software\\MyApp", QSettings::NativeFormat);
-		//Ğ´Èë×¢²á±í
+		//å†™å…¥æ³¨å†Œè¡¨
 		settings.setValue("sn_code", str_pw);
-		QMessageBox msgBox(QMessageBox::Icon::NoIcon, "ÌáÊ¾", "Registration is complete!");
+		QMessageBox msgBox(QMessageBox::Icon::NoIcon, "æç¤º", "Registration is complete!");
 		msgBox.setWindowIcon(QIcon(":/res/ico/info.png"));
 		msgBox.exec();			
 		this->close();
@@ -88,7 +88,7 @@ void frmRegister::on_btnCmdCheckID_clicked()
 	}
 	else
 	{
-		QMessageBox msgBox(QMessageBox::Icon::NoIcon, "´íÎó", "Wrong registration code!");
+		QMessageBox msgBox(QMessageBox::Icon::NoIcon, "é”™è¯¯", "Wrong registration code!");
 		msgBox.setWindowIcon(QIcon(":/res/ico/error.png"));
 		msgBox.exec();		
 	}	
@@ -118,10 +118,10 @@ QString frmRegister::GetKey(QString str)
 
 QString frmRegister::getWMIC(const QString& cmd)
 {
-	//²éÑ¯cpuĞòÁĞºÅ£ºwmic cpu get processorid
-	//²éÑ¯Ö÷°åĞòÁĞºÅ£ºwmic baseboard get serialnumber
-	//²éÑ¯BIOSĞòÁĞºÅ£ºwmic bios get serialnumber
-	//²é¿´Ó²ÅÌĞòÁĞºÅ£ºwmic diskdrive get serialnumber
+	//æŸ¥è¯¢cpuåºåˆ—å·ï¼šwmic cpu get processorid
+	//æŸ¥è¯¢ä¸»æ¿åºåˆ—å·ï¼šwmic baseboard get serialnumber
+	//æŸ¥è¯¢BIOSåºåˆ—å·ï¼šwmic bios get serialnumber
+	//æŸ¥çœ‹ç¡¬ç›˜åºåˆ—å·ï¼šwmic diskdrive get serialnumber
 	QProcess p;
 	p.start(cmd);
 	p.waitForFinished();

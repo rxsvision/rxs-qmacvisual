@@ -1,4 +1,4 @@
-#include "frmFindSlot.h"
+ï»¿#include "frmFindSlot.h"
 
 frmFindSlot::frmFindSlot(QString toolName, QToolBase* toolBase, QWidget* parent)
 	: Toolnterface(toolName, toolBase, parent)
@@ -42,5 +42,5 @@ void frmFindSlot::on_btnAddROI_clicked()
 	view->AddItems(slot_item);
 }
 
-//È«¾Ö±äÁ¿¿ØÖÆ
+//å…¨å±€å˜é‡æ§åˆ¶
 int QConfig::nFormState = 0;

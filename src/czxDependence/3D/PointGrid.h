@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include"czxDependence/czxTool.h"
 
 class PointGrid
@@ -6,8 +6,8 @@ class PointGrid
 public:
 	PointGrid(CP cloud, float interval_x=0.008, float interval_y=0.008);
 	PointGrid(CP cloud, PointGrid& other);
-	PointGrid(const PointGrid&) = delete; // ½ûÓÃ¿½±´¹¹Ôìº¯Êı
-	PointGrid& operator=(const PointGrid&) = delete; // ½ûÓÃ¸³ÖµÔËËã·û
+	PointGrid(const PointGrid&) = delete; // ç¦ç”¨æ‹·è´æ„é€ å‡½æ•°
+	PointGrid& operator=(const PointGrid&) = delete; // ç¦ç”¨èµ‹å€¼è¿ç®—ç¬¦
 	~PointGrid();
 
 	float nDis(int n=5);
@@ -17,7 +17,7 @@ public:
 	
 	void BoundDetect(int range, const int& r, const int& c, int& r_down, int& r_up, int& c_down, int& c_up);
 
-	//float getNearestPoint(const PointT& p, const int& r, const int& c, int& nearest_r, int& nearest_c);  //ÁÙÊ±ÆúÓÃ
+	//float getNearestPoint(const PointT& p, const int& r, const int& c, int& nearest_r, int& nearest_c);  //ä¸´æ—¶å¼ƒç”¨
 	float getNearestPoint(const PointT& p, const int& r, const int& c);
 
 	inline void indexCalculate(const PointT& p, int& i, int& j);
@@ -25,12 +25,12 @@ public:
 	void initParameter(CP& cloud, float interval_x, float interval_y);
 	void initImage(const CP& cloud);
 
-	// ÖØÔØ operator[] ÒÔ·µ»ØÖ¸Ïò float* µÄÒıÓÃ
+	// é‡è½½ operator[] ä»¥è¿”å›æŒ‡å‘ float* çš„å¼•ç”¨
 	float* operator[](int index) {
 		return depth_img[index];
 	}
 
-	// ÖØÔØ const °æ±¾µÄ operator[]£¬ÒÔ±ãÔÚ const ¶ÔÏóÉÏÊ¹ÓÃ
+	// é‡è½½ const ç‰ˆæœ¬çš„ operator[]ï¼Œä»¥ä¾¿åœ¨ const å¯¹è±¡ä¸Šä½¿ç”¨
 	const float* operator[](int index) const {
 		return depth_img[index];
 	}

@@ -1,4 +1,4 @@
-#include "FocusFusion_D.h"
+ï»¿#include "FocusFusion_D.h"
 
 FocusFusion_D::FocusFusion_D()
 {
@@ -7,12 +7,12 @@ FocusFusion_D::FocusFusion_D()
 }
 QString FocusFusion_D::name()
 {
-    return "¶à½¹¾àºÏ³É";
+    return "å¤šç„¦è·åˆæˆ";
 }
 
 QString FocusFusion_D::information()
 {
-    return "Í¼Ïñ´¦Àí";
+    return "å›¾åƒå¤„ç†";
 }
 
 QDialog* showDialog(QString toolName, QToolBase* toolBase)

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <QWidget>
 #include "ui_frmFlatness3D.h"
@@ -71,7 +71,7 @@ private:
 };
 
 
-//È«¾Ö±äÁ¿¿ØÖÆ
+//å…¨å±€å˜é‡æ§åˆ¶
 class QConfig
 {
 public:

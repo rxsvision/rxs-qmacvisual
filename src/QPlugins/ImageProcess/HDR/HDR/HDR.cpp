@@ -1,4 +1,4 @@
-#include "HDR.h"
+ï»¿#include "HDR.h"
 
 FocusFusion_D::FocusFusion_D()
 {
@@ -12,7 +12,7 @@ QString FocusFusion_D::name()
 
 QString FocusFusion_D::information()
 {
-    return "Í¼Ïñ´¦Àí";
+    return "å›¾åƒå¤„ç†";
 }
 
 QDialog* showDialog(QString toolName, QToolBase* toolBase)

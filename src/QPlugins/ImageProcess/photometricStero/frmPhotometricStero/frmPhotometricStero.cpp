@@ -1,4 +1,4 @@
-#include "frmPhotometricStero.h"
+ï»¿#include "frmPhotometricStero.h"
 #include <QMenu>
 #include <QContextMenuEvent>
 #include <QMessageBox>
@@ -15,7 +15,7 @@ frmPhotometricStero::frmPhotometricStero(QString toolName, QToolBase* toolBase, 
 
 	connect(this, &frmPhotometricStero::clickTab, this, &frmPhotometricStero::onTabClicked);
 	QTabBar* tabBar = ui.img_parameters->tabBar();
-	tabBar->installEventFilter(this);  //°²×°ÊÂ¼ş¹ıÂËÆ÷
+	tabBar->installEventFilter(this);  //å®‰è£…äº‹ä»¶è¿‡æ»¤å™¨
 	rectangle_item = new RectangleItem(10, 10, 200, 200);
 	rectangle_item->rect_init_state = true;
 	view->AddItems(rectangle_item);
@@ -31,9 +31,9 @@ int frmPhotometricStero::ExecuteLink(const int int_link, const QString str_link,
 		{
 			strs.clear();
 			strs = str_link.split(".");
-			if (strs.size() == 1 || strs[1] != "Í¼Ïñ")
+			if (strs.size() == 1 || strs[1] != "å›¾åƒ")
 			{
-				QMessageBox msgBox(QMessageBox::Icon::NoIcon, "´íÎó", "ÊäÈëµÄÁ´½Ó´íÎó£¡");
+				QMessageBox msgBox(QMessageBox::Icon::NoIcon, "é”™è¯¯", "è¾“å…¥çš„é“¾æ¥é”™è¯¯ï¼");
 				msgBox.setWindowIcon(QIcon(":/resource/error.png"));
 				msgBox.exec();
 				return -1;
@@ -44,7 +44,7 @@ int frmPhotometricStero::ExecuteLink(const int int_link, const QString str_link,
 			{
 				if (GetToolBase()->m_Tools[i].PublicToolName == strs[0])
 				{
-					//»ñÈ¡µÄÍ¼ÏñÔÚ¹¤¾ßÊı×éÖĞµÄË÷Òı
+					//è·å–çš„å›¾åƒåœ¨å·¥å…·æ•°ç»„ä¸­çš„ç´¢å¼•
 					int image_index = i;
 					auto srcImage = GetToolBase()->m_Tools[image_index].PublicImage.OutputImage;
 					dstImage = cv::Mat();
@@ -62,9 +62,9 @@ int frmPhotometricStero::ExecuteLink(const int int_link, const QString str_link,
 		else if (int_link == 3)
 		{
 			auto strs = str_link.split(".");
-			if (strs.size() == 1 || strs[1] != "Æ¥Åä»ù×¼ÖĞĞÄ")
+			if (strs.size() == 1 || strs[1] != "åŒ¹é…åŸºå‡†ä¸­å¿ƒ")
 			{
-				QMessageBox msgBox(QMessageBox::Icon::NoIcon, "´íÎó", "ÊäÈëµÄÁ´½Ó´íÎó£¡");
+				QMessageBox msgBox(QMessageBox::Icon::NoIcon, "é”™è¯¯", "è¾“å…¥çš„é“¾æ¥é”™è¯¯ï¼");
 				msgBox.setWindowIcon(QIcon(":/resource/error.png"));
 				msgBox.exec();
 				return -1;
@@ -143,7 +143,7 @@ int frmPhotometricStero::Execute(const QString toolname)
 	{
 		if (GetToolBase()->m_Tools[i].PublicToolName == strs[0])
 		{
-			//»ñÈ¡µÄÍ¼ÏñÔÚ¹¤¾ßÊı×éÖĞµÄË÷Òı
+			//è·å–çš„å›¾åƒåœ¨å·¥å…·æ•°ç»„ä¸­çš„ç´¢å¼•
 			auto srcImage = GetToolBase()->m_Tools[i].PublicImage.OutputImage;
 			dstImage = cv::Mat();
 			srcImage.copyTo(dstImage);
@@ -158,7 +158,7 @@ int frmPhotometricStero::Execute(const QString toolname)
 			roi = cv::Rect(m_rectangle.col, m_rectangle.row, m_rectangle.width, m_rectangle.height);
 
 
-			//Î»ÖÃ¸úËæ
+			//ä½ç½®è·Ÿéš
 			if (ui.checkUseFollow->isChecked() == true)
 			{
 				//strs.clear();
@@ -183,7 +183,7 @@ int frmPhotometricStero::Execute(const QString toolname)
 					GetToolBase()->m_Tools[tool_index].PublicResult.State = false;
 					return -2;
 				}
-				if (strs[1] == "Æ¥Åä»ù×¼ÖĞĞÄ")
+				if (strs[1] == "åŒ¹é…åŸºå‡†ä¸­å¿ƒ")
 				{
 					if (GetToolBase()->m_Tools[f_index].PublicTPosition.Center.size() == 0)
 					{
@@ -220,7 +220,7 @@ int frmPhotometricStero::RunToolPro()
 		for (int i = 0; i < ui.img_parameters->count() - 1; i++)
 		{
 			ImageParameter* ip = dynamic_cast<ImageParameter*>(ui.img_parameters->widget(i));
-			if (ip->strs.size() != 2 || ip->strs[1] != "Í¼Ïñ")
+			if (ip->strs.size() != 2 || ip->strs[1] != "å›¾åƒ")
 			{
 				GetToolBase()->m_Tools[tool_index].PublicResult.State = false;
 				return -1;
@@ -229,7 +229,7 @@ int frmPhotometricStero::RunToolPro()
 			{
 				if (GetToolBase()->m_Tools[j].PublicToolName == ip->strs[0])
 				{
-					//»ñÈ¡µÄÍ¼ÏñÔÚ¹¤¾ßÊı×éÖĞµÄË÷Òı
+					//è·å–çš„å›¾åƒåœ¨å·¥å…·æ•°ç»„ä¸­çš„ç´¢å¼•
 					auto srcImage = GetToolBase()->m_Tools[j].PublicImage.OutputImage;
 					cv::Mat dstImage = cv::Mat();
 					if (srcImage.type() == CV_8UC3)
@@ -253,7 +253,7 @@ int frmPhotometricStero::RunToolPro()
 		
 
 		czx::PhotometricSteroCZX ps(imgs, slants, tilts);
-		if (ui.comboOutType->currentText() == "¹âÕÕÍ¼")
+		if (ui.comboOutType->currentText() == "å…‰ç…§å›¾")
 		{
 			auto img = ps.getAlbedo();
 			if (dstImage.type() == CV_8UC3)
@@ -267,7 +267,7 @@ int frmPhotometricStero::RunToolPro()
 			GetToolBase()->m_Tools[tool_index].PublicImage.OutputImage = dstImage;
 			GetToolBase()->m_Tools[tool_index].PublicResult.State = true;
 		}
-		else if (ui.comboOutType->currentText() == "·¨ÏßÍ¼")
+		else if (ui.comboOutType->currentText() == "æ³•çº¿å›¾")
 		{
 			auto img = ps.getNormal();
 			if (dstImage.type() == CV_8U)
@@ -294,7 +294,7 @@ bool frmPhotometricStero::eventFilter(QObject* obj, QEvent* event)
 		QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
 		if (mouseEvent->button() == Qt::LeftButton) 
 		{
-			// »ñÈ¡µã»÷µÄ±êÇ©Ò³Ë÷Òı
+			// è·å–ç‚¹å‡»çš„æ ‡ç­¾é¡µç´¢å¼•
 			int index = ui.img_parameters->tabBar()->tabAt(mouseEvent->pos());
 			if (index != -1) 
 			{
@@ -305,11 +305,11 @@ bool frmPhotometricStero::eventFilter(QObject* obj, QEvent* event)
 		{
 			QMenu menu(this);
 
-			// ÔÚ²Ëµ¥ÖĞÌí¼ÓÑ¡Ïî
-			QAction* action1 = menu.addAction("É¾³ı²ÎÊıÒ³");
+			// åœ¨èœå•ä¸­æ·»åŠ é€‰é¡¹
+			QAction* action1 = menu.addAction("åˆ é™¤å‚æ•°é¡µ");
 			//QAction* action2 = menu.addAction("Show Message");
 
-			//// ´¦Àí²Ëµ¥ÏîµÄµã»÷ÊÂ¼ş
+			//// å¤„ç†èœå•é¡¹çš„ç‚¹å‡»äº‹ä»¶
 			connect(action1, &QAction::triggered, this, &frmPhotometricStero::onTabClose);
 			//connect(action2, &QAction::triggered, this, &MyWidget::onShowMessage);
 			menu.exec(mouseEvent->globalPos());
@@ -329,7 +329,7 @@ void frmPhotometricStero::onTabClose(bool)
 {
 	ui.img_parameters->removeTab(ui.img_parameters->currentIndex());
 	for (int i = ui.img_parameters->currentIndex(); i < ui.img_parameters->count()-1; ++i) {
-		ui.img_parameters->setTabText(i, QString::number(i));  // ĞŞ¸Ä±êÇ©Ò³µÄ±êÇ©Ãû³Æ
+		ui.img_parameters->setTabText(i, QString::number(i));  // ä¿®æ”¹æ ‡ç­¾é¡µçš„æ ‡ç­¾åç§°
 		ImageParameter* ip = dynamic_cast<ImageParameter*>(ui.img_parameters->widget(i));
 		ip->ui.slant->setObjectName(QString("slant") + QString::number(i));
 		ip->ui.tilt->setObjectName(QString("tilt") + QString::number(i));
@@ -346,8 +346,8 @@ void frmPhotometricStero::onTabClicked(int index)
 		QString tab_name = ui.img_parameters->tabText(index);
 		if (tab_name == "+")
 		{
-			int new_index = ui.img_parameters->count() - 1;  // »ñÈ¡µ¹ÊıµÚÈı¸ö±êÇ©Ò³µÄË÷Òı
-			if (new_index >= 0) {  // È·±£Ë÷ÒıÓĞĞ§
+			int new_index = ui.img_parameters->count() - 1;  // è·å–å€’æ•°ç¬¬ä¸‰ä¸ªæ ‡ç­¾é¡µçš„ç´¢å¼•
+			if (new_index >= 0) {  // ç¡®ä¿ç´¢å¼•æœ‰æ•ˆ
 				ImageParameter* ip = new ImageParameter("sub", GetToolBase(), this);
 				connect(ip, &ImageParameter::linkClicked, this, &frmPhotometricStero::on_subBtnLinkImage_clicked);
 				ip->ui.slant->setObjectName(QString("slant")+QString::number(new_index));
@@ -408,5 +408,5 @@ void frmPhotometricStero::on_subBtnLinkImage_clicked()
 
 
 
-//È«¾Ö±äÁ¿¿ØÖÆ
+//å…¨å±€å˜é‡æ§åˆ¶
 int QConfig::nFormState = 0;

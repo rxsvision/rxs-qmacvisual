@@ -1,4 +1,4 @@
-#include "frmAbout.h"
+ï»¿#include "frmAbout.h"
 #include <QStyle>
 #include <QPainter>
 #include<qpainterpath.h>
@@ -10,7 +10,7 @@ frmAbout::frmAbout(QWidget*parent)
 {
 	ui.setupUi(this);		
 	this->setWindowIcon(QIcon(":/res/ico/about.png"));
-	//³õÊ¼»¯±êÌâÀ¸
+	//åˆå§‹åŒ–æ ‡é¢˜æ 
 	initTitleBar();		
 }
 
@@ -31,7 +31,7 @@ void frmAbout::initTitleBar()
 
 void frmAbout::paintEvent(QPaintEvent* event)
 {
-	//ÉèÖÃ±³¾°É«
+	//è®¾ç½®èƒŒæ™¯è‰²
 	QPainter painter(this);
 	QPainterPath pathBack;
 	pathBack.setFillRule(Qt::WindingFill);
