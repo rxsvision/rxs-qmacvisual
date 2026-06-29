@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImageParameterClass</class>
+ <widget class="QWidget" name="ImageParameterClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>416</width>
+    <height>227</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ImageParameter</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupCamera">
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #dfd5cf, stop: 0.15 #acbbac, stop: 0.85 #acbbac,stop:1 #dfd5cf);
+color: rgb(85, 0, 255);</string>
+     </property>
+     <property name="title">
+      <string>图像参数</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(30, 30, 30);
+background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>输入图像：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="txtLinkImage">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 200);
+background-color: rgba(170, 170, 127,50);</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnLinkImage">
+          <property name="toolTip">
+           <string>链接图像</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget{ border:none;border-radius: 8px;padding: 2px 4px;}
+QPushButton:hover{ background-color: rgba(85, 150, 127, 100);}
+QPushButton:pressed{background-color: rgba(85, 180, 127, 160);}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../../GeometryTools/FindCircle/sub_res.qrc">
+            <normaloff>:/resource/link.png</normaloff>:/resource/link.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>27</width>
+            <height>27</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnDelLinkImage">
+          <property name="toolTip">
+           <string>删除图像链接</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QWidget{ border:none;border-radius: 8px;padding: 2px 4px;}
+QPushButton:hover{ background-color: rgba(226, 142, 162, 100);}
+QPushButton:pressed{background-color: rgba(226, 172, 162, 200);}</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../../GeometryTools/FindCircle/sub_res.qrc">
+            <normaloff>:/resource/del_link.png</normaloff>:/resource/del_link.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>27</width>
+            <height>27</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(30, 30, 30);
+background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>倾斜角：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="slant">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 200);
+background-color: rgba(170, 170, 127,50);</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(30, 30, 30);
+background: transparent;</string>
+          </property>
+          <property name="text">
+           <string>俯仰角：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="tilt">
+          <property name="font">
+           <font>
+            <family>微软雅黑</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 200);
+background-color: rgba(170, 170, 127,50);</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="readOnly">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../../GeometryTools/FindCircle/sub_res.qrc"/>
+ </resources>
+ <connections/>
+</ui>

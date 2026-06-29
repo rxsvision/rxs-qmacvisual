@@ -1,0 +1,13 @@
+#pragma once
+
+#include <QtCore/qglobal.h>
+
+#ifndef BUILD_STATIC
+# if defined(SIGNALCIRCLECALIBRATION_LIB)
+#  define SIGNALCIRCLECALIBRATION_EXPORT Q_DECL_EXPORT
+# else
+#  define SIGNALCIRCLECALIBRATION_EXPORT Q_DECL_IMPORT
+# endif
+#else
+# define SIGNALCIRCLECALIBRATION_EXPORT
+#endif
