@@ -1,0 +1,5 @@
+﻿# CalibrationTools plugins
+add_subdirectory(DistortionCalibration)
+add_subdirectory(ERTCalibration)
+add_subdirectory(MeasureCalibration)
+add_subdirectory(SignalCircleCalibration)
